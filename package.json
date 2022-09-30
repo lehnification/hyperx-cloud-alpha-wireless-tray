@@ -1,0 +1,59 @@
+{
+  "name": "hyperx-cloud-alpha-wireless-tray",
+  "productName": "hyperx-cloud-alpha-wireless-tray",
+  "version": "1.0.0",
+  "description": "Tray Application for the Hyper X Cloud Alpha Wireless Headset",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "ESLint",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": {
+    "name": "lehnification",
+    "email": "github@lehner.dev"
+  },
+  "license": "MIT",
+  "build": {
+    "productName": "Hyper X Cloud Alpha Wireless Tray",
+    "appId": "hyperx-cloud-alpha-wireless-tray",
+    "win": {
+      "icon": "src/assets/img/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "src/assets/img/icon.ico",
+      "uninstallerIcon": "src/assets/img/icon.ico",
+      "uninstallDisplayName": "${productName}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "hyperx-cloud-alpha-wireless-tray"
+          }
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.1.0",
+    "node-hid": "^2.1.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.66",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.66",
+    "electron": "21.0.1",
+    "electron-builder": "^23.3.3"
+  }
+}
