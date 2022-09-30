@@ -14,6 +14,6 @@ Tray Application for the Hyper X Cloud Alpha Wireless Headset
 ## Licenses
 Icons by <a href="http://www.freepik.com">pch.vector / Freepik</a>
 
-## Inspirations from
+## Inspirations
 * https://github.com/srn/hyperx-cloud-flight-wireless
 * https://github.com/CubE135/hyperx-cloud-flight-s-battery-monitor
