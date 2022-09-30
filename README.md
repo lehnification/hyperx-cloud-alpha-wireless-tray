@@ -1,5 +1,5 @@
 # HyperX Cloud Alpha Wireless Tray
-Tray Application for the Hyper X Cloud Alpha Wireless Headset
+Tray Application for the HyperX Cloud Alpha Wireless Headset
 
 ## WORK IN PROGRESS
 * Auto switch to and from Headset on connect / disconnect (Reason for this Project)
