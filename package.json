@@ -39,8 +39,22 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "hyperx-cloud-alpha-wireless-tray"
+            "name": "hyperx_cloud_alpha_wireless_tray"
           }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
         }
       ]
     }
@@ -52,8 +66,10 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.66",
+    "@electron-forge/maker-deb": "^6.0.0-beta.66",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.66",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.66",
-    "electron": "21.0.1",
-    "electron-builder": "^23.3.3"
+    "@electron-forge/maker-zip": "^6.0.0-beta.66",
+    "electron": "21.0.1"
   }
 }
