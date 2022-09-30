@@ -2,7 +2,6 @@
 Tray Application for the Hyper X Cloud Alpha Wireless Headset
 
 ## WORK IN PROGRESS
-TODO:
 * Auto switch to and from Headset on connect / disconnect (Reason for this Project)
 * Change mute State
 * Change Monitoring State
