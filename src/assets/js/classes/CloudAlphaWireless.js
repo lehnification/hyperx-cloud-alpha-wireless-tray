@@ -4,7 +4,7 @@ module.exports = class CloudAlphaWireless {
   static VENDOR_ID = 1008;
   static PRODUCT_ID = 2445;
 
-  constructor(tray, icons, updateDelay, debug = true) {
+  constructor(tray, icons, updateDelay, debug = false) {
     this.tray = tray;
     this.icons = icons;
     this.updateDelay = updateDelay;
@@ -36,7 +36,6 @@ module.exports = class CloudAlphaWireless {
   }
 
   runStatusUpdaterInterval() {
-    this.sendBatteryUpdateBuffer();
     this.updateInterval = setInterval(() => {
       this.sendBatteryUpdateBuffer();
     }, this.updateDelay * 60 * 1000);
@@ -155,14 +154,6 @@ module.exports = class CloudAlphaWireless {
     this.tray.setToolTip(str);
   }
 
-  changeDefaultAudio(connected) {
-    if (connected) {
-      // TODO Change Audio to Headset
-    } else {
-      //changeAudioToSpeaker
-    }
-  }
-
   sendBatteryUpdateBuffer() {
     const buffer = Buffer.from([
       0x21, //33
@@ -181,35 +172,6 @@ module.exports = class CloudAlphaWireless {
     this.sendBuffer(buffer);
   }
 
-  sendMuteStatusBuffer() {
-    const buffer = Buffer.from([
-      0x21, //33
-      0xbb, //187
-      0x15, //21
-      0x01, //1
-    ]);
-    const bufferUnMute = Buffer.from([
-      0x21, //33
-      0xbb, //187
-      0x15, //21
-      0x00, //0
-    ]);
-    
-    if(this.status.muted) {
-      buffer = b
-    }
-    
-  }
-
-  sendMonitoringStatusBuffer() {
-    const buffer = Buffer.from([
-      0x21, //33
-      0xbb, //187
-      0x10, //16
-    ]);
-    this.sendBuffer(buffer);
-  }
-
   sendBuffer(buffer) {
     let headset = new HID.HID(this.device.path);
     try {
@@ -219,6 +181,4 @@ module.exports = class CloudAlphaWireless {
       console.error(e);
     }
   }
-
-  executeSoundChange() {}
 };
